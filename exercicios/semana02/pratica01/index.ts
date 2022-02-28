@@ -82,8 +82,8 @@ const orderBy = <T extends Record<string, unknown>>(record: T[], ...args: (keyof
       for (const key of args) {
         const attribute1 = typeof item1[key] === 'string' ? String(item1[key]).toLowerCase() : item1[key];
         const attribute2 = typeof item2[key] === 'string' ? String(item2[key]).toLowerCase() : item2[key];
-        if (attribute1 > attribute2) return -1;
-        if (attribute1 < attribute2) return 1;
+        if (attribute1 < attribute2) return -1;
+        if (attribute1 > attribute2) return 1;
       }
       return 0;
   });
