@@ -19,6 +19,12 @@ header {
   padding-top: 32px;
 }
 
+header > img {
+  width: 200px;
+  border-radius: 50%;
+  margin-bottom: 4px;
+}
+
 address {
   margin-block: 16px;
 }
@@ -59,7 +65,7 @@ ul {
 
 p, li {
   font-size: 18px;
-  max-width: 720px;
+  /* max-width: 720px; */
 }
 
 li + li {
