@@ -1,0 +1,125 @@
+html {
+  --body-background: #4D77FF;
+  --card-background: #56BBF1;
+  --card-button-background: #5DE7EA;
+  --text-primary: #F2FA5A;
+  --search-text: rgb(118, 118, 118);
+  --text-secondary: #F1E1A6;
+  --subtitle: #F4BBBB;
+  --search-radius: 48px;
+  --card-radius: 10px;
+  --card-button-radius: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, button {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: var(--body-background);
+  padding: 24px;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-button {
+  border: 0;
+  background-color: var(--text-primary);
+  color: var(--search-text);
+  border-radius: var(--search-radius);
+  width: 240px;
+  padding: 8px;
+  font-size: 24px;
+  transition: opacity 0.2s;
+}
+
+.search-button:hover {
+  opacity: 0.8;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1 {
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+main {
+  margin-top: 24px;
+}
+
+.cards-list-wrapper > footer {
+  margin-top: 24px;
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.card-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 24px;
+  background-color: var(--card-background);
+  border-radius: var(--card-radius);
+}
+
+.card-profile-info {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.card-profile-info > img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+} 
+
+.profile-name {
+  color: var(--text-secondary);
+}
+
+.profile-position {
+  color: var(--subtitle);
+}
+
+.card-buttons-wrapper {
+  display: flex;
+  gap: 8px;
+}
+
+.card-button {
+  border: 1px solid var(--text-primary);
+  border-radius: var(--card-button-radius);
+  background-color: var(--card-button-background);
+  color: var(--text-primary);
+  font-size: 14px;
+  padding: 8px;
+  transition: opacity 0.2;
+}
+
+.card-button:hover {
+  opacity: 0.8;
+}
