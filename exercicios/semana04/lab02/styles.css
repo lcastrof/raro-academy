@@ -1,4 +1,4 @@
-html {
+:root {
   --body-background: #4D77FF;
   --card-background: #56BBF1;
   --card-button-background: #5DE7EA;
@@ -28,7 +28,11 @@ body {
   margin-inline: auto;
 }
 
-header {
+button {
+  cursor: pointer;
+}
+
+.page-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -49,16 +53,12 @@ header {
   opacity: 0.8;
 }
 
-button {
-  cursor: pointer;
-}
-
-h1 {
+.page-title {
   color: var(--text-primary);
   text-transform: uppercase;
 }
 
-main {
+.main-content {
   margin-top: 24px;
 }
 
