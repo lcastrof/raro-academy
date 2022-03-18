@@ -12,7 +12,7 @@ const ingredientes = [
 
 const fazUmBigMac = (ingredientes: string[]): string => {
   // escrever seu código aqui
-  const bigmac = ingredientes.reduce((acc, ingrediente) => acc + `, ${ingrediente}`);
+  const bigmac = ingredientes.reduce((acc, ingrediente) => `${acc}, ${ingrediente}`);
   return bigmac;
 };
 
@@ -28,10 +28,10 @@ const meses = [
 ];
 
 // como adicionar os meses de "fev", "mai", "ago", "nov" nas posições corretas?
-meses.splice(1,1,'fev');
-meses.splice(4,0,'mai');
-meses.splice(7,0,'ago');
-meses.splice(10,0,'nov');
+meses.splice(1, 1, 'fev');
+meses.splice(4, 0, 'mai');
+meses.splice(7, 0, 'ago');
+meses.splice(10, 0, 'nov');
 // console.log(meses);
 
 // ==========================================================================================
@@ -47,8 +47,10 @@ const alunos = [
 
 const pick = <T extends Record<string, unknown>>(record: T[], ...args: (keyof T)[]): Record<string, unknown>[] => {
   const filteredRecord = record.map((item) => {
-    let filteredItem = {};
-    args.forEach(key => filteredItem = {...filteredItem, [key]: item[key]});
+    let filteredItem = {} as T;
+    args.forEach(key => {
+      filteredItem[key] = item[key]
+    });
     return filteredItem;
   });
   // console.log({ filteredRecord });
@@ -79,13 +81,13 @@ pick(alunos, 'nome', 'nota');
 const orderBy = <T extends Record<string, unknown>>(record: T[], ...args: (keyof T)[]): Record<string, unknown>[] => {
   const orderedArray = [...record];
   orderedArray.sort((item1, item2) => {
-      for (const key of args) {
-        const attribute1 = typeof item1[key] === 'string' ? String(item1[key]).toLowerCase() : item1[key];
-        const attribute2 = typeof item2[key] === 'string' ? String(item2[key]).toLowerCase() : item2[key];
-        if (attribute1 < attribute2) return -1;
-        if (attribute1 > attribute2) return 1;
-      }
-      return 0;
+    for (const key of args) {
+      const attribute1 = typeof item1[key] === 'string' ? String(item1[key]).toLowerCase() : item1[key];
+      const attribute2 = typeof item2[key] === 'string' ? String(item2[key]).toLowerCase() : item2[key];
+      if (attribute1 < attribute2) return -1;
+      if (attribute1 > attribute2) return 1;
+    }
+    return 0;
   });
   // console.log({ orderedArray });
   return orderedArray;
